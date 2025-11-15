@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senden Özür Dilerim ❤</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #ffb6c1; /* açık pembe */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #4a0035;
+    }
+
+    .container {
+        background: #ffe1ec; /* daha açık pembe */
+        padding: 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 450px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255, 0, 102, 0.3);
+        animation: fadeIn 1.2s;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+
+    #yesBtn {
+        background: #ff4f9a;
+        color: white;
+    }
+    #yesBtn:hover {
+        background: #ff1f7c;
+    }
+
+    #noBtn {
+        background: #ffd1e3;
+        color: #4a0035;
+        border: 2px solid #ff4f9a;
+    }
+    #noBtn:hover {
+        background: #ffb3cf;
+    }
+
+    .msg {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        min-height: 30px;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.9);}
+        to {opacity: 1; transform: scale(1);}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Seni İstemeden Kırdım... 💔</h1>
+    <p>Affedersin… Barışalım mı? 💗</p>
+
+    <button id="yesBtn">Evet ❤</button>
+    <button id="noBtn">Hayır 💔</button>
+
+    <div class="msg" id="msg"></div>
+</div>
+
+<script>
+    let noClicks = 0;
+
+    document.getElementById("yesBtn").onclick = function() {
+        document.getElementById("msg").innerHTML = "O zaman konuşmaya devam edelim birtanem ❤💋";
+    }
+
+    document.getElementById("noBtn").onclick = function() {
+        noClicks++;
+
+        let messages = [
+            "Lütfen ama... 😢",
+            "Gerçekten üzgünüm nolur... 💔",
+            "Bak içim gidiyor... affet beni 😭",
+            "Hadi ama güzelim, beni böyle bırakma... 💗",
+            "Ne olur affet... sensiz olmuyor 😞",
+            "Tamam pes ediyorum ama yine de çok seviyorum... 💕",
+            "Hâlâ hayır mı? Kalbim kırılıyor... 😣",
+            "Son kez diyorum... nolur affet beni 🙏💖"
+        ];
+
+        if (noClicks < messages.length) {
+            document.getElementById("msg").innerHTML = messages[noClicks - 1];
+        } else {
+            document.getElementById("msg").innerHTML = "Tamam... yine de seni seviyorum. ❤";
+        }
+    }
+</script>
+
+</body>
+</html>
